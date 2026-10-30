@@ -1,0 +1,35 @@
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\appsettings.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.staticwebassets.runtime.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.staticwebassets.endpoints.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.exe
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.deps.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.runtimeconfig.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.dll
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\bin\Debug\net6.0\Đặt sân bóng đá trực tuyến.pdb
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\rpswa.dswa.cache.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.AssemblyInfoInputs.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.AssemblyInfo.cs
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.RazorAssemblyInfo.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.RazorAssemblyInfo.cs
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\rjimswa.dswa.cache.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\rjsmrazor.dswa.cache.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\rjsmcshtml.dswa.cache.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\scopedcss\bundle\Đặt sân bóng đá trực tuyến.styles.css
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\scopedcss\projectbundle\Đặt sân bóng đá trực tuyến.bundle.scp.css
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\staticwebassets.build.json.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\swae.build.ex.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.dll
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\refint\Đặt sân bóng đá trực tuyến.dll
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.pdb
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\Đặt sân bóng đá trực tuyến.genruntimeconfig.cache
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\ref\Đặt sân bóng đá trực tuyến.dll
+C:\Users\DELL\OneDrive\Desktop\Thực Tập Chuyên Ngành\Đặt sân bóng đá trực tuyến\Đặt sân bóng đá trực tuyến\obj\Debug\net6.0\__t s_n .1E4A4CBB.Up2Date

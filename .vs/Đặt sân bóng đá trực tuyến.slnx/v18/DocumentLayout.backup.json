@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\Th\u1EF1c T\u1EADp Chuy\u00EAn Ng\u00E0nh\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86D86974-EDE2-4A71-BD59-F9B13C117849}|\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn.csproj|c:\\users\\dell\\onedrive\\desktop\\th\u1EF1c t\u1EADp chuy\u00EAn ng\u00E0nh\\\u0111\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\\u0111\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86D86974-EDE2-4A71-BD59-F9B13C117849}|\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn.csproj|solutionrelative:\u0111\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Th\u1EF1c T\u1EADp Chuy\u00EAn Ng\u00E0nh\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Th\u1EF1c T\u1EADp Chuy\u00EAn Ng\u00E0nh\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "\u0110\u1EB7t s\u00E2n b\u00F3ng \u0111\u00E1 tr\u1EF1c tuy\u1EBFn\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-30T10:48:57.906Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

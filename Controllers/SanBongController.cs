@@ -1,5 +1,6 @@
 ﻿using DatSanBanh.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DatSanBanh.Controllers
 {
@@ -46,6 +47,12 @@ namespace DatSanBanh.Controllers
         public ActionResult sua(int id)
         {
             SanBong sb = db.SanBongs.Find(id);
+            if (sb == null) return NotFound();
+            ViewBag.TrangThaiList = new List<SelectListItem>
+    {
+        new SelectListItem("Còn trống", "true", sb.TrangThai == true),
+        new SelectListItem("Đã đặt", "false", sb.TrangThai == false)
+    };
             return View(sb);
         }
         [HttpPost]

@@ -9,6 +9,6 @@ namespace DatSanBanh.Models
         public string TenSan { get; set; } = null!;
         public string LoaiSan { get; set; } = null!;
         public decimal GiaThue { get; set; }
-        public bool? TrangThai { get; set; }
+        public bool TrangThai { get; set; }
     }
 }

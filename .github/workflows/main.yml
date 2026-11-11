@@ -1,4 +1,4 @@
-name: ASP.NET Core CI - DatSanBanh
+name: ASP.NET Core CI/CD
 
 on:
   push:
@@ -18,11 +18,14 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 6.0.x
+
     - name: Restore dependencies
       run: dotnet restore
-         - name: Trigger Render Deployment
-      run: |
-        curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
 
     - name: Build project
       run: dotnet build --no-restore
+
+    # --- THÊM PHẦN CD NÀY VÀO DƯỚI CÙNG ---
+    - name: Trigger Render Deployment
+      run: |
+        curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"

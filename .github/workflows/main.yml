@@ -27,5 +27,4 @@ jobs:
 
     # --- THÊM PHẦN CD NÀY VÀO DƯỚI CÙNG ---
     - name: Trigger Render Deployment
-      run: |
-        curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+      run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"

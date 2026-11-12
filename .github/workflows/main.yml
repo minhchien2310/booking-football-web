@@ -1,4 +1,4 @@
-name: ASP.NET Core CI - DatSanBanh
+name: ASP.NET Core CI/CD
 
 on:
   push:
@@ -24,3 +24,7 @@ jobs:
 
     - name: Build project
       run: dotnet build --no-restore
+
+    # --- THÊM PHẦN CD NÀY VÀO DƯỚI CÙNG ---
+    - name: Trigger Render Deployment
+      run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"

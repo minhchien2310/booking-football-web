@@ -1,8 +1,162 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Trang chủ";
+    var thongBaos = ViewBag.ThongBao as List<DatSanBanh.Models.ThongBao>;
+    var sanBongs = ViewBag.ds as List<DatSanBanh.Models.SanBong>;
+    var bangGias = ViewBag.BangGia as List<DatSanBanh.Models.BangGia>;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section HeroSection {
+    <section class="text-white" style="background: linear-gradient(100deg, #0b0f13 50%, #14532d 100%);">
+        <div class="container py-5">
+            <div class="col-lg-8">
+                <span class="badge bg-success mb-3 px-3 py-2">ĐẶT SÂN ONLINE 24/7</span>
+                <h1 class="display-5 fw-bold mb-3">
+                    ĐẶT SÂN BÓNG MINI <span class="text-success">NHANH & CHỦ ĐỘNG</span>
+                </h1>
+                <p class="text-light opacity-75 mb-4">
+                    Kiểm tra sân trống theo thời gian thực, hỗ trợ gộp sân 5 thành sân 7, ưu đãi 10% lịch cố định và đặt dịch vụ đi kèm.
+                </p>
+            </div>
+
+            <div class="card card-web text-dark p-3 p-md-4 mt-2">
+                <form asp-controller="Home" asp-action="Tim" method="get" class="row g-3 align-items-end">
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold text-muted">Loại sân</label>
+                        <select name="loaiSan" class="form-select">
+                            <option value="">Tất cả (Sân 5 & Sân 7)</option>
+                            <option value="5">Sân 5 người</option>
+                            <option value="7">Sân 7 người</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold text-muted">Ngày thi đấu</label>
+                        <input type="date" name="ngayDat" value="@DateTime.Today.ToString("yyyy-MM-dd")"
+                               min="@DateTime.Today.ToString("yyyy-MM-dd")" class="form-control" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold text-muted">Khung giờ (Ca 90 phút)</label>
+                        <select name="khungGio" class="form-select">
+                            <option value="06:00-07:30">06:00 – 07:30</option>
+                            <option value="07:30-09:00">07:30 – 09:00</option>
+                            <option value="09:00-10:30">09:00 – 10:30</option>
+                            <option value="10:30-12:00">10:30 – 12:00</option>
+                            <option value="14:00-15:30">14:00 – 15:30</option>
+                            <option value="15:30-17:00">15:30 – 17:00</option>
+                            <option value="17:00-18:30">17:00 – 18:30</option>
+                            <option value="18:30-20:00" selected>18:30 – 20:00</option>
+                            <option value="20:00-21:30">20:00 – 21:30</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-pitch w-100 py-2">
+                            <i class="bi bi-search me-1"></i> Tìm sân trống
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+}
+
+@if (thongBaos != null && thongBaos.Any())
+{
+    <section class="mb-4">
+        @foreach (var tb in thongBaos)
+        {
+            <div class="alert bg-white border border-start border-4 border-success shadow-sm d-flex gap-3 align-items-start">
+                <i class="bi bi-megaphone-fill text-success fs-5"></i>
+                <div>
+                    <h6 class="fw-bold mb-1">@tb.TieuDe</h6>
+                    <p class="mb-0 small text-muted">@tb.NoiDung</p>
+                </div>
+            </div>
+        }
+    </section>
+}
+
+<section class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+        <h4 class="fw-bold mb-0">Danh Sách Sân Bóng</h4>
+        <a asp-controller="DatSan" asp-action="DatCoDinh" class="btn btn-outline-dark btn-sm">
+            <i class="bi bi-arrow-repeat text-success me-1"></i> Đặt cố định (Giảm 10%)
+        </a>
+    </div>
+
+    <div class="row g-4">
+        @if (sanBongs != null)
+        {
+            foreach (var san in sanBongs)
+            {
+                var giaTu = (bangGias != null && bangGias.Any(b => b.LoaiSan == san.LoaiSan))
+                    ? bangGias.Where(b => b.LoaiSan == san.LoaiSan).Min(b => b.GiaMoiGio)
+                    : 250000m;
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-web h-100 d-flex flex-column">
+                        <div class="p-3 text-white d-flex justify-content-between align-items-center"
+                             style="background: linear-gradient(135deg, #0b0f13 0%, #14532d 100%);">
+                            <div>
+                                <h5 class="fw-bold mb-0">@san.TenSan</h5>
+                                <small class="text-light opacity-75">Sân @san.LoaiSan người @(san.LaSanGop == true ? "(Ghép)" : "")</small>
+                            </div>
+                            <span class="badge bg-success">Sân @san.LoaiSan</span>
+                        </div>
+                        <div class="card-body d-flex flex-column flex-grow-1">
+                            <p class="text-muted small flex-grow-1">@san.MoTa</p>
+                            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                                <div>
+                                    <small class="text-muted d-block">Giá từ</small>
+                                    <span class="fw-bold text-success fs-5">@giaTu.ToString("N0") đ</span><small class="text-muted">/giờ</small>
+                                </div>
+                                <a asp-controller="DatSan" asp-action="DatLich" asp-route-maSan="@san.MaSan" class="btn btn-pitch">
+                                    Đặt sân
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>
+
+<section>
+    <h4 class="fw-bold mb-3 pb-2 border-bottom">Bảng Giá Thuê Sân</h4>
+    <div class="card card-web">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="ps-3">Loại sân</th>
+                        <th>Ngày áp dụng</th>
+                        <th>Khung giờ</th>
+                        <th class="text-end pe-3">Đơn giá / Giờ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (bangGias != null)
+                    {
+                        foreach (var bg in bangGias)
+                        {
+                            <tr>
+                                <td class="ps-3 fw-bold">Sân @bg.LoaiSan người</td>
+                                <td>
+                                    @if (bg.LaCuoiTuan == true)
+                                    {
+                                        <span class="badge bg-dark text-success border border-success">Thứ 7 & Chủ Nhật</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-light text-dark border">Thứ 2 – Thứ 6</span>
+                                    }
+                                </td>
+                                <td>@bg.GioBatDau.ToString(@"hh\:mm") – @bg.GioKetThuc.ToString(@"hh\:mm")</td>
+                                <td class="text-end pe-3 fw-bold text-success">@bg.GiaMoiGio.ToString("N0") đ</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

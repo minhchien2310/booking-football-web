@@ -33,8 +33,6 @@ namespace DatSanBanh.Models
             {
                 entity.ToTable("SanBong");
 
-                entity.Property(e => e.GiaThue).HasColumnType("decimal(18, 2)");
-
                 entity.Property(e => e.LoaiSan).HasMaxLength(50);
 
                 entity.Property(e => e.TenSan).HasMaxLength(100);

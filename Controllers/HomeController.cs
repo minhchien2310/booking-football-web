@@ -1,32 +1,32 @@
-﻿using DatSanBanh.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using DatSanBanh.Models;
 
 namespace DatSanBanh.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        QuanLyDatSanBanhContext db = new QuanLyDatSanBanhContext();
 
         public IActionResult Index()
         {
-            return View();
-        }
+            var homNay = DateTime.Today;
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            ViewBag.ThongBao = db.ThongBaos
+                .Where(t => t.HienThi == true && (t.TuNgay == null || t.TuNgay <= homNay) && (t.DenNgay == null || t.DenNgay >= homNay))
+                .OrderByDescending(t => t.NgayTao)
+                .ToList();
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewBag.ds = db.SanBongs
+                .Where(s => s.TrangThai == "HoatDong")
+                .ToList();
+
+            ViewBag.BangGia = db.BangGia
+                .OrderBy(b => b.LoaiSan)
+                .ThenBy(b => b.LaCuoiTuan)
+                .ThenBy(b => b.GioBatDau)
+                .ToList();
+
+            return View();
         }
     }
 }

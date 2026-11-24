@@ -1,49 +1,201 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+}
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DatSanBanh</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/DatSanBanh.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - Sân Bóng Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --pitch-black: #0b0f13;
+            --pitch-green: #16a34a;
+            --pitch-green-hover: #15803d;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f6f8f7;
+            color: #111827;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .web-navbar {
+            background-color: var(--pitch-black);
+            border-bottom: 2px solid var(--pitch-green);
+        }
+
+        .web-navbar .nav-link {
+            color: #cbd5e1;
+            font-weight: 500;
+            padding: 16px 14px !important;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .web-navbar .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .web-navbar .nav-link.active {
+            color: #22c55e;
+            font-weight: 700;
+            border-bottom-color: #22c55e;
+        }
+
+        .btn-pitch {
+            background-color: var(--pitch-green);
+            border-color: var(--pitch-green);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .btn-pitch:hover {
+            background-color: var(--pitch-green-hover);
+            border-color: var(--pitch-green-hover);
+            color: #ffffff;
+        }
+
+        .card-web {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .header-black-green {
+            background-color: var(--pitch-black);
+            color: #ffffff;
+            border-bottom: 3px solid var(--pitch-green);
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: var(--pitch-black);
+            color: #94a3b8;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DatSanBanh</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+    <!-- 1. THANH MENU TRÊN CÙNG -->
+    <header class="sticky-top shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark web-navbar py-0">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2 py-2" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="bg-success text-white px-2 py-1 rounded-2 d-inline-flex">
+                        <i class="bi bi-dribbble"></i>
+                    </span>
+                    <span>SÂN BÓNG <span class="text-success">PRO</span></span>
+                </a>
+
+                <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto ms-lg-4 mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link @(currentController == "Home" && currentAction == "Index" ? "active" : "")"
+                               asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link @(currentController == "Home" && currentAction == "Tim" ? "active" : "")"
+                               asp-area="" asp-controller="Home" asp-action="Tim">Tìm sân trống</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(currentController == "DatSan" && currentAction == "DatLich" ? "active" : "")"
+                               asp-area="" asp-controller="DatSan" asp-action="DatLich">Đặt sân lẻ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(currentController == "DatSan" && currentAction == "DatCoDinh" ? "active" : "")"
+                               asp-area="" asp-controller="DatSan" asp-action="DatCoDinh">Đặt cố định</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(currentController == "DatSan" && (currentAction == "LichSu" || currentAction == "ChiTiet") ? "active" : "")"
+                               asp-area="" asp-controller="DatSan" asp-action="LichSu">Lịch sử đặt</a>
                         </li>
                     </ul>
+
+                    <div class="d-flex align-items-center gap-2 py-2">
+                        @if (User.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                            @if (User.IsInRole("QuanTri") || User.IsInRole("NhanVien"))
+                            {
+                                <a class="btn btn-outline-success btn-sm fw-semibold"
+                                   asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                                    <i class="bi bi-speedometer2 me-1"></i> Quản trị
+                                </a>
+                            }
+                            <span class="text-light small me-1">
+                                <i class="bi bi-person-circle text-success me-1"></i>@User.Identity.Name
+                            </span>
+                            <a class="btn btn-outline-light btn-sm"
+                               asp-area="" asp-controller="TaiKhoan" asp-action="DangXuat">Đăng xuất</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-light btn-sm px-3"
+                               asp-area="" asp-controller="TaiKhoan" asp-action="DangNhap">Đăng nhập</a>
+                            <a class="btn btn-pitch btn-sm px-3"
+                               asp-area="" asp-controller="TaiKhoan" asp-action="DangKy">Đăng ký</a>
+                        }
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
+    <!-- 2. VÙNG BANNER RIÊNG CỦA TRANG CHỦ -->
+    @await RenderSectionAsync("HeroSection", required: false)
+
+    <!-- 3. VÙNG HIỂN THỊ NỘI DUNG TỪNG TRANG CON -->
+    <main class="container my-4">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success border-0 border-start border-4 border-success shadow-sm">
+                <i class="bi bi-check-circle-fill me-2"></i> @TempData["Success"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger border-0 border-start border-4 border-danger shadow-sm">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["Error"]
+            </div>
+        }
+
+        @RenderBody()
+    </main>
+
+    <!-- 4. CHÂN TRANG -->
+    <footer class="py-4 mt-5 border-top border-success border-3">
         <div class="container">
-            &copy; 2026 - DatSanBanh - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row g-3 align-items-center small">
+                <div class="col-md-6">
+                    <div class="text-white fw-bold fs-6 mb-1">
+                        <i class="bi bi-dribbble text-success me-1"></i> SÂN BÓNG PRO
+                    </div>
+                    <div>180 Cao Lỗ, Phường 4, Quận 8, TP.HCM — Mở cửa: 06:00 – 22:30</div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div>Hotline đặt sân: <strong class="text-white">0901 000 001</strong> | Email: hotro@sanbongpro.vn</div>
+                    <div class="mt-1">&copy; 2026 Hệ thống quản lý & đặt sân bóng đá trực tuyến.</div>
+                </div>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -144,11 +144,11 @@ C:\Users\DELL\Downloads\DatSanBanh\DatSanBanh\DatSanBanh\obj\Debug\net6.0\refint
 C:\Users\DELL\Downloads\DatSanBanh\DatSanBanh\DatSanBanh\obj\Debug\net6.0\DatSanBanh.pdb
 C:\Users\DELL\Downloads\DatSanBanh\DatSanBanh\DatSanBanh\obj\Debug\net6.0\DatSanBanh.genruntimeconfig.cache
 C:\Users\DELL\Downloads\DatSanBanh\DatSanBanh\DatSanBanh\obj\Debug\net6.0\ref\DatSanBanh.dll
-C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\appsettings.json
-C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.staticwebassets.endpoints.json
-C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.staticwebassets.runtime.json
+C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.staticwebassets.endpoints.json
 C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.exe
+C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\appsettings.json
 C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.deps.json
 C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.runtimeconfig.json
 C:\Users\DELL\OneDrive\Desktop\DatSanBanh\DatSanBanh\DatSanBanh\bin\Debug\net6.0\DatSanBanh.dll

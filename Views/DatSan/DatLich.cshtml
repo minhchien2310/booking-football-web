@@ -1,0 +1,171 @@
+﻿@model DatSanBanh.Models.DatSan
+@{
+    ViewData["Title"] = "Đặt sân bóng";
+    var dsSan = ViewBag.DanhSachSan as List<DatSanBanh.Models.SanBong> ?? new List<DatSanBanh.Models.SanBong>();
+    var bangGia = ViewBag.BangGia as List<DatSanBanh.Models.BangGia> ?? new List<DatSanBanh.Models.BangGia>();
+}
+
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-dark text-white py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-calendar-check text-success me-2"></i>Phiếu Đặt Sân Trực Tuyến</h5>
+                </div>
+                <div class="card-body p-4">
+                    @if (ViewBag.Loi != null)
+                    {
+                        <div class="alert alert-danger py-2 small">
+                            <i class="bi bi-exclamation-triangle-fill me-1"></i> @ViewBag.Loi
+                        </div>
+                    }
+
+                    <form asp-action="DatLich" method="post">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Chọn sân bóng</label>
+                            <select asp-for="MaSan" class="form-select" required>
+                                <option value="">-- Chọn sân thi đấu --</option>
+                                @foreach (var s in dsSan)
+                                {
+                                    <option value="@s.MaSan">@s.TenSan (Sân @s.LoaiSan người)</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Ngày đá</label>
+                            <input asp-for="NgayDat" type="date" class="form-control"
+                                   min="@DateTime.Today.ToString("yyyy-MM-dd")" required />
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Giờ bắt đầu</label>
+                                <select asp-for="GioBatDau" class="form-select" required>
+                                    @for (int h = 6; h <= 22; h++)
+                                    {
+                                        var ts = new TimeSpan(h, 0, 0);
+                                        <option value="@ts">@ts.ToString(@"hh\:mm")</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Giờ kết thúc</label>
+                                <select asp-for="GioKetThuc" class="form-select" required>
+                                    @for (int h = 7; h <= 23; h++)
+                                    {
+                                        var ts = new TimeSpan(h, 0, 0);
+                                        <option value="@ts">@ts.ToString(@"hh\:mm")</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Ghi chú thêm (nếu có)</label>
+                            <textarea asp-for="GhiChu" class="form-control" rows="2" placeholder="Ví dụ: Cần mượn thêm bóng, áo bib..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-bold">
+                            <i class="bi bi-check2-circle me-1"></i> Xác Nhận Đặt Sân
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-success text-white py-3">
+                    <h6 class="mb-0 fw-bold"><i class="bi bi-tags-fill me-2"></i>Bảng Giá Thuê Sân Tham Khảo</h6>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped align-middle mb-0 small">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Loại sân</th>
+                                <th>Ngày áp dụng</th>
+                                <th>Khung giờ</th>
+                                <th class="text-end">Giá / giờ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var g in bangGia)
+                            {
+                                <tr>
+                                    <td class="fw-semibold">Sân @g.LoaiSan</td>
+                                    <td>@(g.LaCuoiTuan ? "T7 - CN" : "T2 - T6")</td>
+                                    <td>@g.GioBatDau.ToString(@"hh\:mm") - @g.GioKetThuc.ToString(@"hh\:mm")</td>
+                                    <td class="text-end fw-bold text-success">@g.GiaMoiGio.ToString("N0")đ</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer bg-white text-muted small">
+                    <i class="bi bi-info-circle me-1"></i> Hệ thống tự động tính tiền sân và tiền cọc (30%) sau khi xác nhận.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function capNhatGioHopLe() {
+        const ngayInput = document.getElementById("NgayDat");
+        const gioBatDauSelect = document.getElementById("GioBatDau");
+        const gioKetThucSelect = document.getElementById("GioKetThuc");
+
+        if (!ngayInput || !gioBatDauSelect || !gioKetThucSelect) return;
+
+        const now = new Date();
+        const homNayStr = now.getFullYear() + "-" +
+            String(now.getMonth() + 1).padStart(2, '0') + "-" +
+            String(now.getDate()).padStart(2, '0');
+
+        const laHomNay = (Reflect.get(ngayInput, "value") === homNayStr);
+        const gioHienTai = now.getHours();
+
+        let coGioHopLeDauTien = null;
+        const optBatDau = Reflect.get(gioBatDauSelect, "options");
+
+        for (let i = 0; i < optBatDau.length; i++) {
+            const opt = optBatDau[i];
+            const gioOpt = parseInt(opt.value.split(":")[0]);
+            if (laHomNay && gioOpt <= gioHienTai) {
+                opt.disabled = true;
+            } else {
+                opt.disabled = false;
+                if (coGioHopLeDauTien === null) coGioHopLeDauTien = opt.value;
+            }
+        }
+
+        const idxBatDau = Reflect.get(gioBatDauSelect, "selectedIndex");
+        if (optBatDau[idxBatDau] && optBatDau[idxBatDau].disabled && coGioHopLeDauTien) {
+            Reflect.set(gioBatDauSelect, "value", coGioHopLeDauTien);
+        }
+
+        const gioBatDauChon = parseInt(String(Reflect.get(gioBatDauSelect, "value")).split(":")[0]);
+        const optKetThuc = Reflect.get(gioKetThucSelect, "options");
+
+        for (let i = 0; i < optKetThuc.length; i++) {
+            const opt = optKetThuc[i];
+            const gioKet = parseInt(opt.value.split(":")[0]);
+            opt.disabled = (gioKet <= gioBatDauChon);
+        }
+
+        const idxKetThuc = Reflect.get(gioKetThucSelect, "selectedIndex");
+        if (optKetThuc[idxKetThuc] && optKetThuc[idxKetThuc].disabled) {
+            for (let i = 0; i < optKetThuc.length; i++) {
+                if (!optKetThuc[i].disabled) {
+                    Reflect.set(gioKetThucSelect, "value", optKetThuc[i].value);
+                    break;
+                }
+            }
+        }
+    }
+
+    document.getElementById("NgayDat")?.addEventListener("change", capNhatGioHopLe);
+    document.getElementById("GioBatDau")?.addEventListener("change", capNhatGioHopLe);
+    document.addEventListener("DOMContentLoaded", capNhatGioHopLe);
+</script>

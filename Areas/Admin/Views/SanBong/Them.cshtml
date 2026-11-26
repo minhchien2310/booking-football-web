@@ -1,0 +1,41 @@
+﻿@model DatSanBanh.Models.SanBong
+@{
+    ViewData["Title"] = "Thêm sân bóng mới";
+}
+
+<div class="card border-0 shadow-sm" style="max-width: 600px;">
+    <div class="card-body p-4">
+        @if (ViewBag.Loi != null)
+        {
+            <div class="alert alert-danger py-2 small">@ViewBag.Loi</div>
+        }
+        <form asp-action="Them" method="post">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Tên sân</label>
+                <input asp-for="TenSan" class="form-control" placeholder="Ví dụ: Sân 5C" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Loại sân (số người)</label>
+                <select asp-for="LoaiSan" class="form-select">
+                    <option value="5">Sân 5 người</option>
+                    <option value="7">Sân 7 người</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Mô tả ngắn</label>
+                <textarea asp-for="MoTa" class="form-control" rows="2" placeholder="Cỏ nhân tạo, gần khu vực..."></textarea>
+            </div>
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Trạng thái</label>
+                <select asp-for="TrangThai" class="form-select">
+                    <option value="HoatDong">Hoạt động</option>
+                    <option value="BaoTri">Bảo trì</option>
+                </select>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success px-4">Lưu sân mới</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>

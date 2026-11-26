@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Đăng nhập hệ thống";
+}
+
+<style>
+    .form-dang-nhap .form-control {
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        color: #212529;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        .form-dang-nhap .form-control::placeholder {
+            color: #8c959e;
+            opacity: 0.75;
+        }
+
+        .form-dang-nhap .form-control:focus {
+            border-color: #198754;
+            box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+        }
+</style>
+
+<div class="container py-5 form-dang-nhap">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header text-white py-3 px-4" style="background: linear-gradient(135deg, #102a1d 0%, #195e3a 100%);">
+                    <span class="badge bg-success mb-1">SÂN BÓNG HOÀNG CHIẾN</span>
+                    <h4 class="mb-0 fw-bold">ĐĂNG NHẬP HỆ THỐNG</h4>
+                    <small class="text-white-50">Đăng nhập để đặt sân và xem lịch sử đặt của bạn</small>
+                </div>
+
+                <div class="card-body p-4 bg-white">
+                    @if (TempData["DangKyThanhCong"] != null)
+                    {
+                        <div class="alert alert-success d-flex align-items-center py-2 px-3 small rounded-3 mb-3" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <div>@TempData["DangKyThanhCong"]</div>
+                        </div>
+                    }
+                    <form asp-action="DangNhap" asp-controller="TaiKhoan" method="post">
+
+                        <div class="mb-3">
+                            <input name="Email" type="email" class="form-control" placeholder="Email đăng nhập *" required />
+                        </div>
+
+                        <div class="mb-4">
+                            <input name="MatKhau" type="password" class="form-control" placeholder="Mật khẩu *" required />
+                        </div>
+
+                        <!-- Hiển thị thông báo lỗi giống hệt Bài 6 (trang 57) -->
+                        @if (ViewBag.LoiDangNhap != null)
+                        {
+                            <div class="mb-3">
+                                <span class="fw-bold text-danger small">@ViewBag.LoiDangNhap</span>
+                            </div>
+                        }
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3">
+                            Đăng nhập
+                        </button>
+                    </form>
+
+                    <hr class="my-4 text-muted" />
+
+                    <div class="text-center small">
+                        <span class="text-muted">Chưa có tài khoản?</span>
+                        <a asp-action="DangKy" asp-controller="TaiKhoan" class="text-success fw-bold text-decoration-none ms-1">
+                            Đăng ký ngay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

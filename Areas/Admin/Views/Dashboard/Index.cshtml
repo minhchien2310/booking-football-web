@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Tổng quan hệ thống";
+}
+
+<div class="row g-3">
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm border-start border-4 border-success">
+            <div class="card-body">
+                <div class="text-muted small">Tổng số sân bóng</div>
+                <div class="fs-3 fw-bold text-dark mt-1">@ViewBag.TongSan</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm border-start border-4 border-primary">
+            <div class="card-body">
+                <div class="text-muted small">Sân đang hoạt động</div>
+                <div class="fs-3 fw-bold text-dark mt-1">@ViewBag.SanHoatDong</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm border-start border-4 border-warning">
+            <div class="card-body">
+                <div class="text-muted small">Tổng tài khoản</div>
+                <div class="fs-3 fw-bold text-dark mt-1">@ViewBag.TongNguoiDung</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm border-start border-4 border-info">
+            <div class="card-body">
+                <div class="text-muted small">Tổng đơn đặt sân</div>
+                <div class="fs-3 fw-bold text-dark mt-1">@ViewBag.TongDonDat</div>
+            </div>
+        </div>
+    </div>
+</div>
